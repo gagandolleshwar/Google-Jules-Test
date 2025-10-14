@@ -1,0 +1,124 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f8ff;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
+}
+
+.timer-container {
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.timer {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #ffb6c1;
+    color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.animation-container {
+    margin-top: 40px;
+}
+
+.cat {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.cat-face {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 120px;
+    background-color: #f5deb3;
+    border-radius: 50%;
+}
+
+.eye {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    top: 40px;
+}
+
+.eye.left {
+    left: 30px;
+}
+
+.eye.right {
+    right: 30px;
+}
+
+.mouth {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    border: 5px solid black;
+    border-top: none;
+    border-radius: 0 0 40px 40px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tail {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    background-color: #d2b48c;
+    border-radius: 10px;
+    top: 100px;
+    left: 140px;
+    transform-origin: left center;
+}
+
+.cat.purring .cat-face {
+    animation: purr 0.5s infinite alternate;
+}
+
+.cat.wagging .tail {
+    animation: wag 1s infinite;
+}
+
+@keyframes purr {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
+
+@keyframes wag {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-20deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
